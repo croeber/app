@@ -1,0 +1,121 @@
+<div class="container">
+  <br>
+    <dx-form id="form"
+    [formData]="details"
+    (onEditorEnterKey)="onEditorEnterKey($event)"
+    >
+    <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
+      <dxi-item>
+        <div class="form-avatar"></div>
+      </dxi-item>
+      <dxi-item itemType="group" [colSpan]="3">
+          <dxi-item [disabled]="true" dataField="seller"></dxi-item>
+          <dxi-item [disabled]="true" dataField="price"></dxi-item>
+          
+      </dxi-item>
+    </dxi-item>
+    <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
+      <dxi-item itemType="group">
+        <dxi-item [disabled]="true" dataField="manufacturer"></dxi-item>
+        <dxi-item [disabled]="true" dataField="model"></dxi-item>
+        <dxi-item [disabled]="true" dataField="mpg"></dxi-item>
+      </dxi-item>
+      <dxi-item itemType="group">
+          <dxi-item [disabled]="true" dataField="curbWeight"></dxi-item>
+          <dxi-item [disabled]="true" dataField="year"></dxi-item>
+          <dxi-item [disabled]="true" dataField="horsepower"></dxi-item>
+      </dxi-item>
+      <dxi-item dataField="question" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }"></dxi-item>
+    </dxi-item>
+    
+  </dx-form>
+  <br>
+  <dx-button
+      style="float: right"
+      text="Purchase"
+      (onClick)="submit()">
+  </dx-button>
+
+  <dx-linear-gauge id="gauge" [value]="values.overall">
+      <dxo-scale
+          [startValue]="0"
+          [endValue]="5"
+          [tickInterval]="1"
+          [minorTickInterval]="0.5">
+          <dxo-minor-tick [visible]="true"></dxo-minor-tick>
+      </dxo-scale>
+      <dxo-title text="Overall Rating">
+          <dxo-font [size]="28"></dxo-font>
+      </dxo-title>
+  </dx-linear-gauge>
+  <dx-linear-gauge id="gauge" [value]="values.mechanical">
+      <dxo-scale
+          [startValue]="0"
+          [endValue]="5"
+          [tickInterval]="1"
+          [minorTickInterval]="0.5">
+          <dxo-minor-tick [visible]="true"></dxo-minor-tick>
+      </dxo-scale>
+      <dxo-title text="Mechanical Rating">
+          <dxo-font [size]="28"></dxo-font>
+      </dxo-title>
+  </dx-linear-gauge>
+  <dx-linear-gauge id="gauge" [value]="values.powertrain">
+      <dxo-scale
+          [startValue]="0"
+          [endValue]="5"
+          [tickInterval]="1"
+          [minorTickInterval]="0.5">
+          <dxo-minor-tick [visible]="true"></dxo-minor-tick>
+      </dxo-scale>
+      <dxo-title text="Powertrain Rating">
+          <dxo-font [size]="28"></dxo-font>
+      </dxo-title>
+  </dx-linear-gauge>
+  <dx-linear-gauge id="gauge" [value]="values.body">
+      <dxo-scale
+          [startValue]="0"
+          [endValue]="5"
+          [tickInterval]="1"
+          [minorTickInterval]="0.5">
+          <dxo-minor-tick [visible]="true"></dxo-minor-tick>
+      </dxo-scale>
+      <dxo-title text="Body Rating">
+          <dxo-font [size]="28"></dxo-font>
+      </dxo-title>
+  </dx-linear-gauge>
+  <dx-linear-gauge id="gauge" [value]="values.interior">
+      <dxo-scale
+          [startValue]="0"
+          [endValue]="5"
+          [tickInterval]="1"
+          [minorTickInterval]="0.5">
+          <dxo-minor-tick [visible]="true"></dxo-minor-tick>
+      </dxo-scale>
+      <dxo-title text="Interior Rating">
+          <dxo-font [size]="28"></dxo-font>
+      </dxo-title>
+  </dx-linear-gauge>
+  <dx-linear-gauge id="gauge" [value]="values.accessories">
+      <dxo-scale
+          [startValue]="0"
+          [endValue]="5"
+          [tickInterval]="1"
+          [minorTickInterval]="0.5">
+          <dxo-minor-tick [visible]="true"></dxo-minor-tick>
+      </dxo-scale>
+      <dxo-title text="Accessories Rating">
+          <dxo-font [size]="28"></dxo-font>
+      </dxo-title>
+  </dx-linear-gauge>
+  
+<br>
+<br>
+</div>
+
+<dx-toast
+    message="Congratulations on your new car!!"
+    type="success"
+    [displayTime]="3000"
+    [(visible)]="isToastVisible">
+</dx-toast>

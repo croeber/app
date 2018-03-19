@@ -1,0 +1,92 @@
+<br>
+<br>
+
+<div class="container">
+  <div class="">
+
+    <dx-tile-view
+    #tileView
+    [showScrollbar]="true"
+    [height]="390"
+    [baseItemHeight]="120"
+    [baseItemWidth]="185"
+    width="100%"
+    [itemMargin]="10"
+    (onItemClick)="onItemClick($event)"
+    [direction]="'horizontal'">
+    >
+    <dxi-item
+        *ngFor="let item of tileViewDataSource"
+        [widthRatio]="item.widthRatio"
+        [heightRatio]="item.heightRatio">
+        <img class="image" [src]="item.img" />
+        <div class="price">{{item.manufacturer}} {{item.model}}</div>
+    </dxi-item>
+</dx-tile-view>
+  </div>
+  <br>
+  <div class="row" [hidden]="isItemNull">
+      <div class="col-lg-3 col-md-3">
+          <h4>{{selectedItem.manufacturer}} {{selectedItem.model}}</h4>
+          <dx-list 
+            class="info"
+            (onItemClick)="onListItemClick($event)"
+            [dataSource]='[
+              { text: "Buy or Place Bid" },
+              { text: "Ask Question" },
+              { text: "Seller Information" },
+              { text: "Specifications" },
+              { text: "Kelley Blue Book" },
+              { text: "Get Carfax" },
+              { text: "Wikipedia" }
+            ]'
+            [visible]="true"></dx-list>
+      </div>
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <dx-circular-gauge id="gauge1" [value]="overallValue">
+            <dxo-scale
+                [startValue]="1"
+                [endValue]="5"
+                [tickInterval]="1"  >
+                <dxo-label [useRangeColors]="true"></dxo-label>
+            </dxo-scale>
+            <dxo-range-container palette="midnightblue">
+                <dxi-range [startValue]="1" [endValue]="5"></dxi-range>
+            </dxo-range-container>
+            <dxo-title text="Overall">
+                <dxo-font [size]="28"></dxo-font>
+            </dxo-title>
+        </dx-circular-gauge>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <dx-circular-gauge id="gauge2" [value]="mechanicalValue">
+            <dxo-scale
+                [startValue]="1"
+                [endValue]="5"
+                [tickInterval]="1">
+                <dxo-label [useRangeColors]="true"></dxo-label>
+            </dxo-scale>
+            <dxo-range-container palette="pastel">
+                <dxi-range [startValue]="1" [endValue]="5"></dxi-range>
+            </dxo-range-container>
+            <dxo-title text="Mechanical">
+                <dxo-font [size]="28"></dxo-font>
+            </dxo-title>
+        </dx-circular-gauge>
+
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6">
+
+        <dx-circular-gauge id="gauge3" [value]="powertrainValue" [theme]="'generic.carmine'">
+            <dxo-scale
+                [startValue]="1"
+                [endValue]="5"
+                [tickInterval]="1">
+            </dxo-scale>
+            <dxo-title text="Powertrain">
+                <dxo-font [size]="28"></dxo-font>
+            </dxo-title>
+        </dx-circular-gauge>
+    </div>
+  </div>
+</div>

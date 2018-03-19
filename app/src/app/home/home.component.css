@@ -1,0 +1,19 @@
+
+.image {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+    display: block;
+}
+.price {
+    font-size: 16px;
+    position: absolute;
+    background-color: black;
+    color: white;
+    opacity: 0.4;
+    padding: 2px;
+    left: 9px;
+    top: 9px;
+}

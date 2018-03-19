@@ -1,0 +1,20 @@
+<header class="header">
+
+    <dx-nav-bar
+    (onItemClick)="onItemClick($event)"
+    >
+        <dxi-item text="Home" icon="home"></dxi-item>
+        <dxi-item text="About" icon="info"></dxi-item>
+        <dxi-item text="My Account" icon="card"></dxi-item>
+    </dx-nav-bar>
+ 
+    <dx-list
+    style="float: right; border: 1px solid #ddd"
+    [dataSource]="['Logout']"
+    [width]="'33.33%'"
+    [visible]="isDropDownBoxOpened"
+    (onItemClick)="dxListClicked($event)"
+    >
+    </dx-list>
+</header>
+    

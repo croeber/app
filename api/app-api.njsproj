@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0e120035-5f41-4315-b751-c5051f39c8f9}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>backpack.config.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include=".eslintrc.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Compile Include="backpack.config.js" />
+    <Compile Include="build.js" />
+    <Compile Include="build\main.js" />
+    <Content Include="public\index.html" />
+    <Compile Include="server\index.js" />
+    <Compile Include="server\routes.js" />
+    <Compile Include="test\examples.controller.js" />
+    <Content Include="build\public\index.html" />
+    <Content Include="build\public\api-explorer\index.html" />
+    <Content Include="build\public\api-explorer\oauth2-redirect.html" />
+    <Content Include="build\public\api-explorer\swagger-ui.css" />
+    <Content Include="build\public\api-explorer\favicon-16x16.png" />
+    <Content Include="build\public\api-explorer\favicon-32x32.png" />
+    <Compile Include="build\public\api-explorer\swagger-ui-bundle.js" />
+    <Compile Include="build\public\api-explorer\swagger-ui-standalone-preset.js" />
+    <Compile Include="build\public\api-explorer\swagger-ui.js" />
+    <Content Include="public\api-explorer\index.html" />
+    <Content Include="public\api-explorer\oauth2-redirect.html" />
+    <Content Include="public\api-explorer\swagger-ui.css" />
+    <Content Include="public\api-explorer\favicon-16x16.png" />
+    <Content Include="public\api-explorer\favicon-32x32.png" />
+    <Compile Include="public\api-explorer\swagger-ui-bundle.js" />
+    <Compile Include="public\api-explorer\swagger-ui-standalone-preset.js" />
+    <Compile Include="public\api-explorer\swagger-ui.js" />
+    <Compile Include="server\common\env.js" />
+    <Compile Include="server\common\logger.js" />
+    <Compile Include="server\common\server.js" />
+    <Compile Include="server\api\services\examples.db.service.js" />
+    <Compile Include="server\api\services\examples.service.js" />
+    <Compile Include="server\api\controllers\examples\controller.js" />
+    <Compile Include="server\api\controllers\examples\router.js" />
+    <Compile Include="server\common\swagger\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build" />
+    <Folder Include="build\public" />
+    <Folder Include="build\public\api-explorer" />
+    <Folder Include="build\server" />
+    <Folder Include="build\server\common" />
+    <Folder Include="build\server\common\swagger" />
+    <Folder Include="public" />
+    <Folder Include="public\api-explorer" />
+    <Folder Include="server" />
+    <Folder Include="server\api" />
+    <Folder Include="server\api\controllers" />
+    <Folder Include="server\api\controllers\examples" />
+    <Folder Include="server\api\services" />
+    <Folder Include="server\common" />
+    <Folder Include="server\common\swagger" />
+    <Folder Include="test" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
