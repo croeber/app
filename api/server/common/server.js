@@ -25,6 +25,7 @@ export default class ExpressServer {
   }
 
   listen(port = process.env.PORT) {
+	  console.log(process.env.LOG_LEVEL)
     const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
     http.createServer(app).listen(port, welcome(port));
     return app;
